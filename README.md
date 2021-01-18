@@ -1,5 +1,25 @@
 ## Laravel Backend Test for a company
 
+## Code Overview
+
+The following directory are main places that I modified:
+
+- app/Helpers
+- app/Http/Controllers/Api/V1
+- app/Http/Requests
+- app/Models
+- app/Modules
+- database/seeders
+- database/factories
+- app/Imports
+- tests/Feature
+- tests/Unit
+
+## Dependencies
+
+- Laravel 8.x
+- PHP > 7.3
+
 ## Installation
 
 #### .env config
@@ -123,3 +143,13 @@ However, in real life, the logic could be complicated as it may require 3rd part
 #### Unit
 
 // todo unit test
+
+
+### CI/CD
+
+#### Travis CI
+
+
+
+#### CD
+Not needed as no server required for this test.
