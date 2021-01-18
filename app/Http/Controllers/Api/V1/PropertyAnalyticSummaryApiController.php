@@ -3,9 +3,8 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Helpers\ApiController;
-use App\Http\Requests\CreatePropertyApiRequest;
 use App\Http\Requests\PropertyAnalyticSummaryApiRequest;
-use App\Modules\PropertyManagement\Services\PropertyAnalyticService;
+use App\Modules\Report\SuburbSummaryReport;
 
 /**
  * @author Ryan Deng
@@ -16,27 +15,87 @@ use App\Modules\PropertyManagement\Services\PropertyAnalyticService;
 class PropertyAnalyticSummaryApiController extends ApiController
 {
     /**
-     * Create a new property
-     * @param CreatePropertyApiRequest $request
-     * @param PropertyAnalyticService $propertyService
+     * @param PropertyAnalyticSummaryApiRequest $request
+     * @param SuburbSummaryReport $report
      * @return \Illuminate\Http\JsonResponse
      */
-    public function summary(
-       PropertyAnalyticSummaryApiRequest $request
+    public function suburbSummary(
+        PropertyAnalyticSummaryApiRequest $request,
+        SuburbSummaryReport $report
     )
     {
         // get only validated data
         $data = $request->validated();
 
-        // create property
-        $response = $propertyService
-            ->createProperty(
+        // create report
+        $response = $report
+            ->generateReport(
                 [
-                    'suburb' => $data['suburb'],
-                    'state' => $data['state'],
-                    'country' => $data['country'],
+                    'suburb' => $data['value'],
                 ]
-            );
+            )
+            ->toArray();
+
+        return $this->sendSuccess(
+            [
+                'data' => $response
+            ]
+        );
+    }
+
+
+    /**
+     * @param PropertyAnalyticSummaryApiRequest $request
+     * @param SuburbSummaryReport $report
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function stateSummary(
+        PropertyAnalyticSummaryApiRequest $request,
+        SuburbSummaryReport $report
+    )
+    {
+        // get only validated data
+        $data = $request->validated();
+
+        // create report
+        $response = $report
+            ->generateReport(
+                [
+                    'state' => $data['value'],
+                ]
+            )
+            ->toArray();
+
+        return $this->sendSuccess(
+            [
+                'data' => $response
+            ]
+        );
+    }
+
+
+
+    /**
+     * @param PropertyAnalyticSummaryApiRequest $request
+     * @param SuburbSummaryReport $report
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function countrySummary(
+        PropertyAnalyticSummaryApiRequest $request,
+        SuburbSummaryReport $report
+    )
+    {
+        // get only validated data
+        $data = $request->validated();
+
+        // create report
+        $response = $report
+            ->generateReport(
+                [
+                    'country' => $data['value'],
+                ]
+            )
+            ->toArray();
 
         return $this->sendSuccess(
             [

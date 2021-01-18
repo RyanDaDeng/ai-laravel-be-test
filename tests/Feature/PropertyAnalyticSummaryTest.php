@@ -2,11 +2,14 @@
 
 namespace Tests\Feature;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
+use App\Models\Property;
+use App\Models\PropertyAnalytic;
+use App\Modules\Report\AbstractSummaryReport;
 use Tests\TestCase;
 
 class PropertyAnalyticSummaryTest extends TestCase
 {
+
     /**
      * test Property Summary Suburb
      *

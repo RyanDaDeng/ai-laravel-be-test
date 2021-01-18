@@ -24,7 +24,7 @@ class PropertyAnalyticSummaryApiRequest extends ApiFormRequest
     public function rules()
     {
         return [
-            'type' => 'in:suburb,state,country|required',
+            'value' => 'string|required|max:100',
         ];
     }
 }

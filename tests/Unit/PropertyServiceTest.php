@@ -6,6 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 class PropertyServiceTest extends TestCase
 {
+
     /**
      * A basic test example.
      *
@@ -14,6 +15,7 @@ class PropertyServiceTest extends TestCase
     public function testBasicTest()
     {
         //TODO
-        $this->assertTrue(true);
+//        $this->assertTrue(true);
+
     }
 }
