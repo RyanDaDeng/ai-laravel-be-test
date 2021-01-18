@@ -44,7 +44,9 @@ The API structure contains the following three simple main helper functions:
 ````
 
 `ApiController` is used to provide functions that generate response into a structured response.
+
 `ApiFormRequest` is used for form request to support JSON response, by default it returns web request.
+
 `ApiStructureTrait` a collection of functions that formatting response.
 
 
