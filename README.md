@@ -121,11 +121,21 @@ However, in real life, the logic could be complicated as it may require 3rd part
          -- Services
             -- PropertyAnalyticService
             -- PropertyAnalyticSummaryService
+     -- Report
+            -- AbstractSummaryReport
+            -- CountrySummaryReport
+            -- StateSummaryReport
+            -- SuburbSummaryReport
 ````
 
-### Indexing
 
-// database index design
+For report query, there are many easier ways to do it.
+- using Join query
+- pure query inside each controller function
+etc..
+
+The reason that I over-engineered it because I want to demonstrate my OO skills.
+
 
 ### Testing
 
@@ -142,13 +152,7 @@ However, in real life, the logic could be complicated as it may require 3rd part
 
 #### Feature Test
 
-// todo mainly API test
-
-
-#### Unit
-
-// todo unit test
-
+Please check all tests under `tests/Feature`
 
 ### CI/CD
 
