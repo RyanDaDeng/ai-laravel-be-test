@@ -10,7 +10,8 @@ use Illuminate\Validation\ValidationException;
 use Illuminate\Http\Exceptions\HttpResponseException;
 
 /**
- * @author Ryan
+ * @author Ryan Deng
+ * @copyright NOT FREE, NOT OPEN SOURCE, NOT USED FOR COMMERCIAL WITHOUT CONSENT
  * Class ApiFormRequest
  * @package App\Modules\Core
  */
@@ -21,6 +22,7 @@ class ApiFormRequest extends FormRequest
     const INVALID = 'INVALID';
 
     /**
+     * Format web response as a JSON response
      * @param Validator $validator
      */
     protected function failedValidation(Validator $validator)

@@ -31,7 +31,7 @@ Run command to migrate
 
 ## Design Details
 
-### API Structure
+### API Core Helpers
 
 The API structure contains the following three simple main helper functions:
 
@@ -47,22 +47,71 @@ The API structure contains the following three simple main helper functions:
 `ApiFormRequest` is used for form request to support JSON response, by default it returns web request.
 `ApiStructureTrait` a collection of functions that formatting response.
 
-### API URI
+
+### API URI Design
 
 The API routing name is following standard restful URI designs as best practice.
 
 1. `POST /api/properties`   - create a new property
 2. `POST /api/properties/{property_id}/analytics`  - create a new analytic to a property
-3. `PUT /api/properties/{property_id}/analytics`  - update an analytic to a property
+3. `PUT /api/properties/{property_id}/analytics/{analytic_id}`  - update an analytic to a property
 4. `GET /api/properties/{property_id}/analytics` - Get all analytics for an inputted property
 5. `GET /api/summaries/property-analytics-report` - Get a summary of all property analytics for an inputted suburb/state/country
 
+
+### Validation Layer
+
+In my solution, I employed the Laravel its own FormRequest class that enables me to do validation out of box.
+
+````
+- app
+  -- Http
+     -- Requests
+         -- AddNewAnalyticToPropertyApiRequest
+         -- CreatePropertyApiRequest
+         -- PropertyAnalyticSummaryApiRequest
+         -- UpdateAnalyticToPropertyApiRequest
+````
+
+In Controller layer, the following code will handle all errors out of box.
+
+````php
+
+$request->validated();
+
+````
+
+### Service Layer
+
+All main business logic saved in service folder. Since the requirement is fairly easy, we can just move all logic to conrtoller layer that could minimise the codebase.
+
+However, in real life, the logic could be complicated as it may require 3rd party integration or different module communications, I decoupled them for future improvements.
+
+````
+- app
+  -- Modules
+     -- PropertyMamnagement
+         -- Services
+            -- PropertyAnalyticService
+            -- PropertyAnalyticSummaryService
+````
 
 ### Indexing
 
 // database index design
 
 ### Testing
+
+
+#### Factories
+
+````
+- database
+  -- factories
+     -- AnalyticTypeFactory
+     -- PropertyAnalyticFactory
+     -- PropertyFactory
+````
 
 #### Feature Test
 

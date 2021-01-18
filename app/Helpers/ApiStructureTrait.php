@@ -2,31 +2,16 @@
 
 namespace App\Helpers;
 
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Response;
 
 /**
- * @author Ryan
+ * @author Ryan Deng
+ * @copyright NOT FREE, NOT OPEN SOURCE, NOT USED FOR COMMERCIAL WITHOUT CONSENT
  * Trait ApiStructureTrait
  * @package App\Modules\Core
  */
 trait ApiStructureTrait
 {
-
-    /**
-     * @param Builder $build
-     * @param $data
-     * @return Builder
-     */
-    public function filter(Builder $build, $data)
-    {
-        foreach ($data as $key => $value) {
-            if (!empty($value)) {
-                $build->where($key, $value);
-            }
-        }
-        return $build;
-    }
 
     /**
      * @param array $data

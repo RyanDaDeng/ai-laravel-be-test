@@ -12,6 +12,7 @@ use Illuminate\Support\Str;
  * @property string $suburb
  * @property string $state
  * @property string $country
+ * @property AnalyticType $a
  * Class Property
  * @package App\Models
  */
