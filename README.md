@@ -137,6 +137,7 @@ etc..
 
 The reason that I over-engineered it because I want to demonstrate my OO skills.
 
+Alert: I don't fully understand what `percentage properties with/without value` does mean, so I just calculate numbers by my own understanding. The calculation might be wrong. FYI.
 
 ### Testing
 
