@@ -1,8 +1,5 @@
 ## Laravel Backend Test for a company
 
-[![Coverage Status][ico-coverage]][link-coverage]
-[![Build][ico-build]][link-build]
-
 
 ## Code Overview
 
@@ -160,15 +157,10 @@ Please check all tests under `tests/Feature`
 
 ### CI/CD
 
-#### Travis CI
+#### CI
 
-
+Github Actions: https://github.com/RyanDaDeng/ai-laravel-be-test/actions
 
 #### CD
+
 Not needed as no server required for this test.
-
-
-[ico-coverage]: https://coveralls.io/repos/github/RyanDaDeng/ai-laravel-be-test/badge.svg?branch=main&service=github
-[ico-build]: https://travis-ci.org/RyanDaDeng/ai-laravel-be-test.svg?branch=main
-[link-coverage]: https://coveralls.io/github/RyanDaDeng/ai-laravel-be-test?branch=main
-[link-build]: https://travis-ci.org/RyanDaDeng/ai-laravel-be-test
