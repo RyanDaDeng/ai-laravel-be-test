@@ -17,4 +17,7 @@
             <directory suffix=".php">./app</directory>
         </include>
     </coverage>
+    <logging>
+        <junit outputFile="build/logs/clover.xml"/>
+    </logging>
 </phpunit>

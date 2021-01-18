@@ -10,7 +10,8 @@ matrix:
 
 install:
   - travis_retry composer self-update
-  - travis_retry composer install --prefer-source --no-interaction --dev
+  - travis_retry composer install --prefer-source --no-interaction
+  - php artisan key:generate
 
 after_success:
   - travis_retry php vendor/bin/php-coveralls -v
