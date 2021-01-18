@@ -51,13 +51,16 @@ The API structure contains the following three simple main helper functions:
 
 The API routing name is following standard restful URI designs as best practice.
 
-1. POST /api/properties   - create a new property
-2. POST /api/properties/{property_id}/analytics  - create a new analytic to a property
-3. PUT /api/properties/{property_id}/analytics  - update an analytic to a property
-4. GET /api/properties/{property_id}/analytics - Get all analytics for an inputted property
-5. 
+1. `POST /api/properties`   - create a new property
+2. `POST /api/properties/{property_id}/analytics`  - create a new analytic to a property
+3. `PUT /api/properties/{property_id}/analytics`  - update an analytic to a property
+4. `GET /api/properties/{property_id}/analytics` - Get all analytics for an inputted property
+5. `GET /api/summaries/property-analytics-report` - Get a summary of all property analytics for an inputted suburb/state/country
 
 
+### Indexing
+
+// database index design
 
 ### Testing
 
