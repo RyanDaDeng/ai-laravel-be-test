@@ -14,6 +14,7 @@ The following directory are main places that I modified:
 - app/Imports
 - tests/Feature
 - tests/Unit
+- routes
 
 ## Dependencies
 
