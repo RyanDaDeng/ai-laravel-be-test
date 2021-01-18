@@ -7,11 +7,11 @@ use Illuminate\Support\Collection;
 
 abstract class AbstractSummaryReport
 {
-    private $minValue;
-    private $maxValue;
-    private $medianValue;
-    private $percentageWithValue;
-    private $percentageWithoutValue;
+    private $minValue = 0;
+    private $maxValue = 0;
+    private $medianValue = 0;
+    private $percentageWithValue = 0;
+    private $percentageWithoutValue = 0;
 
     /**
      * @param array $filters
@@ -22,6 +22,7 @@ abstract class AbstractSummaryReport
 
     /**
      * @param array $filters
+     * @return $this
      */
     public function generateReport(array $filters = [])
     {
@@ -102,7 +103,8 @@ abstract class AbstractSummaryReport
         $totalSum = $this->getSumOfValues();
         $totalValue = $collection->sum('value');
 
-        $this->percentageWithValue = round($totalValue / $totalSum, 2);
+        $value = ($totalValue / $totalSum) * 100;
+        $this->percentageWithValue = $totalSum == 0 ? null : floor($value);
     }
 
     /**
@@ -112,7 +114,8 @@ abstract class AbstractSummaryReport
     {
         $totalCount = $this->getCountOfProperties();
         $totalFilteredCount = $collection->count();
-        $this->percentageWithoutValue = round($totalCount / $totalFilteredCount, 2);
+        $value = ($totalFilteredCount / $totalCount) * 100;
+        $this->percentageWithoutValue = $totalFilteredCount == 0 ? null :floor($value);
     }
 
     /**
@@ -121,11 +124,11 @@ abstract class AbstractSummaryReport
     public function toArray()
     {
         return [
-            'max_value' => $this->maxValue,
-            'min_value' => $this->minValue,
-            'median_value' => $this->medianValue,
-            'percentage_with_value' => $this->percentageWithValue,
-            'percentage_without_value' => $this->percentageWithoutValue
+            'max_value' => (float)$this->maxValue,
+            'min_value' => (float)$this->minValue,
+            'median_value' => (float)$this->medianValue,
+            'percentage_with_value' => (float)$this->percentageWithValue,
+            'percentage_without_value' => (float)$this->percentageWithoutValue
         ];
     }
 

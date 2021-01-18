@@ -130,7 +130,7 @@ class PropertyAnalyticService
     public function getAllAnalyticForProperty($propertyId)
     {
         return Property::query()
-            ->where('property_id', $propertyId)
+            ->where('id', $propertyId)
             ->with('analytic_types')
             ->get();
     }

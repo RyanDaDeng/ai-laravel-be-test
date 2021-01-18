@@ -30,7 +30,7 @@ trait ApiStructureTrait
      * @param int $httpCode
      * @return \Illuminate\Http\JsonResponse
      */
-    public function sendError($data = [], $systemCode = '', $httpCode = 200)
+    public function sendError($data = [], $systemCode = '', $httpCode = 400)
     {
         return $this->sendResponse('error', $data, $systemCode, $httpCode);
     }

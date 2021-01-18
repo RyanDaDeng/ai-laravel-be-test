@@ -16,10 +16,11 @@ class StateSummaryReport extends AbstractSummaryReport
      */
     public function getPropertyIds(array $filters = []): array
     {
+
         return Property::query()
             ->select('id')
             ->where(
-                'suburb', "=", $filters['state']
+                'state', "=", $filters['state']
             )
             ->pluck('id')
             ->toArray();

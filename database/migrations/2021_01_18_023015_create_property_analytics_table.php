@@ -15,8 +15,8 @@ class CreatePropertyAnalyticsTable extends Migration
     {
         Schema::create('property_analytics', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('property_id');
-            $table->foreignId('analytic_type_id');
+            $table->foreignId('property_id')->constrained();
+            $table->foreignId('analytic_type_id')->constrained();
             $table->text('value');
             $table->timestamps();
         });

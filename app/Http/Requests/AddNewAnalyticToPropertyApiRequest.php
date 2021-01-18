@@ -24,8 +24,8 @@ class AddNewAnalyticToPropertyApiRequest extends ApiFormRequest
     public function rules()
     {
         return [
-            'analytic_type_id' => 'required|string|max:255',
-            'value' => 'required|numeric|max:255',
+            'analytic_type_id' => 'required|numeric|max:255',
+            'value' => 'required|string|max:255',
         ];
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api\V1;
 
 use App\Helpers\ApiController;
 use App\Http\Requests\AddNewAnalyticToPropertyApiRequest;
+use App\Http\Requests\UpdateAnalyticToPropertyApiRequest;
 use App\Modules\PropertyManagement\Services\PropertyAnalyticService;
 
 /**
@@ -27,7 +28,6 @@ class PropertyAnalyticApiController extends ApiController
         PropertyAnalyticService $propertyAnalyticService
     )
     {
-
         $data = $request->validated();
 
         // check if item exists
@@ -80,14 +80,14 @@ class PropertyAnalyticApiController extends ApiController
      * Update an analytic to a property
      * @param $propertyId
      * @param $analyticId
-     * @param AddNewAnalyticToPropertyApiRequest $request
+     * @param UpdateAnalyticToPropertyApiRequest $request
      * @param PropertyAnalyticService $propertyAnalyticService
      * @return \Illuminate\Http\JsonResponse
      */
     public function updateAssign(
         $propertyId,
         $analyticId,
-        AddNewAnalyticToPropertyApiRequest $request,
+        UpdateAnalyticToPropertyApiRequest $request,
         PropertyAnalyticService $propertyAnalyticService
     )
     {

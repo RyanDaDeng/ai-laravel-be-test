@@ -38,7 +38,7 @@ class ApiFormRequest extends FormRequest
                     'errors' => $errors
                 ],
                 self::INVALID,
-                JsonResponse::HTTP_OK
+                JsonResponse::HTTP_BAD_REQUEST
             )
         );
     }

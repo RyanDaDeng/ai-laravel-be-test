@@ -23,10 +23,10 @@ class AnalyticTypeFactory extends Factory
     public function definition()
     {
         return [
-            'guid'=> Str::uuid(),
-            'suburb' => $this->faker->name,
-            'state' => $this->faker->name,
-            'country' => $this->faker->name,
+            'name' => $this->faker->name,
+            'units' => $this->faker->name,
+            'is_numeric' => true,
+            'num_decimal_places' => 2
         ];
     }
 }

@@ -16,7 +16,7 @@ class CountrySummaryReport extends AbstractSummaryReport
         return Property::query()
             ->select('id')
             ->where(
-                'suburb', "=", $filters['country']
+                'country', "=", $filters['country']
             )
             ->pluck('id')
             ->toArray();

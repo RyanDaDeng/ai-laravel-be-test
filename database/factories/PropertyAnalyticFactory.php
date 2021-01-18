@@ -22,10 +22,7 @@ class PropertyAnalyticFactory extends Factory
     public function definition()
     {
         return [
-            'name'=> $this->faker->name,
-            'units' => $this->faker->name,
-            'is_numeric' => $this->faker->boolean,
-            'num_decimal_places' => $this->faker->randomNumber(),
+            'value'=> $this->faker->name
         ];
     }
 }

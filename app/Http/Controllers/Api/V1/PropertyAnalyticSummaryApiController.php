@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Api\V1;
 
 use App\Helpers\ApiController;
 use App\Http\Requests\PropertyAnalyticSummaryApiRequest;
+use App\Modules\Report\CountrySummaryReport;
+use App\Modules\Report\StateSummaryReport;
 use App\Modules\Report\SuburbSummaryReport;
 
 /**
@@ -46,12 +48,12 @@ class PropertyAnalyticSummaryApiController extends ApiController
 
     /**
      * @param PropertyAnalyticSummaryApiRequest $request
-     * @param SuburbSummaryReport $report
+     * @param StateSummaryReport $report
      * @return \Illuminate\Http\JsonResponse
      */
     public function stateSummary(
         PropertyAnalyticSummaryApiRequest $request,
-        SuburbSummaryReport $report
+        StateSummaryReport $report
     )
     {
         // get only validated data
@@ -77,12 +79,12 @@ class PropertyAnalyticSummaryApiController extends ApiController
 
     /**
      * @param PropertyAnalyticSummaryApiRequest $request
-     * @param SuburbSummaryReport $report
+     * @param CountrySummaryReport $report
      * @return \Illuminate\Http\JsonResponse
      */
     public function countrySummary(
         PropertyAnalyticSummaryApiRequest $request,
-        SuburbSummaryReport $report
+        CountrySummaryReport $report
     )
     {
         // get only validated data
