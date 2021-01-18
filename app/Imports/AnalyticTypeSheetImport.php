@@ -3,8 +3,6 @@
 namespace App\Imports;
 
 use App\Models\AnalyticType;
-use App\Models\Property;
-use App\Models\PropertyAnalytic;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Log;
 use Maatwebsite\Excel\Concerns\ToCollection;
@@ -17,6 +15,7 @@ class AnalyticTypeSheetImport implements ToCollection, WithHeadingRow
         //
         $rows->each(function ($row) {
             try {
+                AnalyticType::unguard();
                 AnalyticType::query()->firstOrCreate(
                     [
                         'id' => $row['id'],

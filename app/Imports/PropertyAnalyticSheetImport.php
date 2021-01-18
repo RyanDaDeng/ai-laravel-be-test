@@ -16,6 +16,7 @@ class PropertyAnalyticSheetImport implements ToCollection, WithHeadingRow
         $rows->each(function ($row) {
 
             try {
+                PropertyAnalytic::unguard();
                 PropertyAnalytic::query()->firstOrCreate(
                     [
                         'property_id' => $row['property_id'],

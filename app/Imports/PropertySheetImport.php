@@ -13,6 +13,7 @@ class PropertySheetImport implements WithHeadingRow, ToCollection
     {
         //
         $rows->each(function ($row) {
+            Property::unguard();
             Property::query()
                 ->firstOrCreate(
                     [
