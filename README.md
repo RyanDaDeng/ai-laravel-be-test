@@ -87,7 +87,7 @@ $request->validated();
 
 All main business logic saved in service folder. Since the requirement is fairly easy, we can just move all logic to conrtoller layer that could minimise the codebase.
 
-However, in real life, the logic could be complicated as it may require 3rd party integration or different module communications, I decoupled them for future improvements.
+However, in real life, the logic could be complicated as it may require 3rd party integration or different module communications, I decoupled them for future improvements. Additionally, its also good for unit level testing.
 
 ````
 - app
