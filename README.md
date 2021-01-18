@@ -1,5 +1,9 @@
 ## Laravel Backend Test for a company
 
+[![Coverage Status][ico-coverage]][link-coverage]
+[![Build][ico-build]][link-build]
+
+
 ## Code Overview
 
 The following directory are main places that I modified:
@@ -162,3 +166,9 @@ Please check all tests under `tests/Feature`
 
 #### CD
 Not needed as no server required for this test.
+
+
+[ico-coverage]: https://coveralls.io/repos/github/RyanDaDeng/ai-laravel-be-test/badge.svg?branch=main&service=github
+[ico-build]: https://travis-ci.org/RyanDaDeng/ai-laravel-be-test.svg?branch=main
+[link-coverage]: https://coveralls.io/github/RyanDaDeng/ai-laravel-be-test?branch=main
+[link-build]: https://travis-ci.org/RyanDaDeng/ai-laravel-be-test
