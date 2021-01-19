@@ -104,7 +104,7 @@ abstract class AbstractSummaryReport
         $totalValue = $collection->sum('value');
         if ($totalSum > 0) {
             $value = ($totalValue / $totalSum) * 100;
-            $this->percentageWithValue = $totalSum == 0 ? null : floor($value);
+            $this->percentageWithValue = floor($value);
         }
     }
 
@@ -117,7 +117,7 @@ abstract class AbstractSummaryReport
         $totalFilteredCount = $collection->count();
         if ($totalCount > 0) {
             $value = ($totalFilteredCount / $totalCount) * 100;
-            $this->percentageWithoutValue = $totalFilteredCount == 0 ? null : floor($value);
+            $this->percentageWithoutValue = floor($value);
         }
     }
 
