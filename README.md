@@ -140,6 +140,9 @@ The reason that I over-engineered it because I want to demonstrate my OO skills.
 
 Alert: I don't fully understand what `percentage properties with/without value` does mean, so I just calculate numbers by my own understanding. The calculation might be wrong. FYI.
 
+
+Note: I didn't use service container / service provider for this project as its not quite needed right now. If its needed, just make DI and Service Binding in provider and register it in laravel provider.
+
 ### Testing
 
 
